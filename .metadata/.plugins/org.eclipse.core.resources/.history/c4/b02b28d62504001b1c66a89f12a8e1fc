@@ -1,0 +1,5 @@
+package io.playground.logging;
+
+public class LoggingDemo {
+
+}

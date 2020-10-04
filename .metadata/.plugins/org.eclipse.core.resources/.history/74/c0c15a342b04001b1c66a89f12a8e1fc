@@ -1,0 +1,32 @@
+package io.playground.logging;
+
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.TimeZone;
+import java.util.logging.Formatter;
+import java.util.logging.LogRecord;
+
+public class MyFormatter extends Formatter {
+	
+	private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm:ss.SSS");
+
+	@Override
+	public String format(LogRecord record) {
+		LocalDateTime recordDateTime = LocalDateTime.ofInstant(
+				Instant.ofEpochMilli(record.getMillis()), 
+				TimeZone.getDefault().toZoneId());
+		
+		StringBuilder builder = new StringBuilder(256);
+		
+        builder.append(recordDateTime.format(dtf)).append(" - ");
+        builder.append("[").append(record.getSourceClassName()).append(".");
+        builder.append(record.getSourceMethodName()).append("] - ");
+        builder.append("[").append(record.getLevel()).append("] - ");
+        builder.append(formatMessage(record));
+        builder.append(System.lineSeparator());
+        
+		return builder.toString();
+	}
+
+}

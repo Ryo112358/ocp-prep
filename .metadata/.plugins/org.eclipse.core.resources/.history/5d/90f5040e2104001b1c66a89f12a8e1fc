@@ -1,0 +1,24 @@
+package oca.se8;
+
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Driver {
+	
+	private static Logger logger = Logger.getLogger("oca.se8.driver");
+
+	public static void main(String[] args) throws IOException {
+		
+
+		final FileHandler fh = new FileHandler("mylog.txt");
+		logger.addHandler(fh);
+		logger.setLevel(Level.ALL);
+		
+		logger.fine("doing stuff");
+		System.out.println("Hello world! ^.^");
+		logger.warning("done!");
+	}
+
+}

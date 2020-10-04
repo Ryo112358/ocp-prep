@@ -1,0 +1,6 @@
+10/02/2020 10:38:17.203 - [io.playground.logging.LoggingDemo.run]
+[FINE] - doing stuff
+10/02/2020 10:38:17.233 - [io.playground.logging.LoggingDemo.run]
+[INFO] - A wild info appeared!
+10/02/2020 10:38:17.234 - [io.playground.logging.LoggingDemo.run]
+[WARNING] - done!

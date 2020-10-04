@@ -1,0 +1,45 @@
+package io.playground.logging;
+
+import java.io.IOException;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
+public class LoggingDemo {
+	
+	private static final Logger logger = Logger.getLogger(LoggingDemo.class.getName());
+	private static final MyFormatter logFormat = new MyFormatter();
+	
+	private LoggingDemo() {
+		throw new IllegalStateException("DNI: Demo of built-in Java logger");
+	}
+
+	public static void run() {
+		
+		try {
+			configureLogger();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		logger.fine("doing stuff");
+		System.out.println("Hello world! ^.^");
+		logger.warning("done!");
+	}
+	
+	private static void configureLogger() throws IOException {
+		logger.setUseParentHandlers(false);
+		final ConsoleHandler ch = new ConsoleHandler();
+		final FileHandler fh = new FileHandler("mylog.txt");
+		ch.setFormatter(new SimpleFormatter());
+		ch.setLevel(Level.ALL);
+		fh.setFormatter(logFormat);
+		fh.setLevel(Level.WARNING);
+		logger.addHandler(ch);
+		logger.addHandler(fh);
+//		logger.setLevel(Level.ALL);
+	}
+
+}

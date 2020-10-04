@@ -1,0 +1,16 @@
+package oca.se8.logging;
+
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Logger;
+
+public final class LoggerUtility {
+	
+	private static final MyConsoleLogFormatter consoleLogFormat = new MyConsoleLogFormatter();
+	
+	public static void configureConsoleLogger(Logger logger) {
+		final ConsoleHandler ch = new ConsoleHandler();
+		ch.setFormatter(consoleLogFormat);
+		logger.addHandler(ch);
+	}
+
+}

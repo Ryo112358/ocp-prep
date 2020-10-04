@@ -1,0 +1,21 @@
+package oca.se8.logging;
+
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Logger;
+
+public final class LoggerUtility {
+	
+	private static final MyConsoleLogFormatter consoleLogFormat = new MyConsoleLogFormatter();
+	
+	private LoggerUtility() {
+		throw new IllegalStateException("DNI");
+	}
+	
+	public static void configureConsoleLogger(Logger logger) {
+		logger.setUseParentHandlers(false);
+		final ConsoleHandler ch = new ConsoleHandler();
+		ch.setFormatter(consoleLogFormat);
+		logger.addHandler(ch);
+	}
+
+}

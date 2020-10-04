@@ -1,0 +1,49 @@
+package io.playground.logging;
+
+import java.io.IOException;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
+public class LoggingDemo {
+	
+	private static final Logger logger = Logger.getLogger(LoggingDemo.class.getName());
+	private static final MyFileLogFormatter logFormat = new MyFileLogFormatter();
+	
+	private LoggingDemo() {
+		throw new IllegalStateException("DNI: Demo of built-in Java logger");
+	}
+
+	public static void run() {
+		
+		try {
+			configureLogger();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		logger.fine("doing stuff");
+		logger.info("A wild info appeared!");
+		System.out.println("Hello world! ^.^");
+		logger.warning("done!");
+	}
+	
+	private static void configureLogger() throws IOException {
+		logger.setUseParentHandlers(false);
+		
+		final ConsoleHandler ch = new ConsoleHandler();
+		ch.setLevel(Level.INFO); // ConsoleHandlers only log levels INFO and above
+		ch.setFormatter(new SimpleFormatter());
+		logger.addHandler(ch);
+		
+		final FileHandler fh = new FileHandler("mylog.txt");
+		fh.setLevel(Level.INFO);
+		fh.setFormatter(logFormat);
+		logger.addHandler(fh);
+		
+//		logger.setLevel(Level.ALL);
+	}
+
+}

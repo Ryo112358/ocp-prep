@@ -1,0 +1,16 @@
+package oca.se8;
+
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		
+		private final Logger LOGGER = Logger.getLogger(Driver.class.getName());
+		private final FileHandler fh = new FileHandler("mylog.txt");
+		// TODO Auto-generated method stub
+		System.out.println("Hello world! ^.^");
+	}
+
+}
