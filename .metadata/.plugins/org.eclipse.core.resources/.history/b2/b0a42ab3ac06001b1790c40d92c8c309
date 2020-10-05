@@ -13,7 +13,6 @@ public class Driver {
 		LoggerUtility.configureConsoleLogger(logger);
 		logger.info("testing");
 		System.out.println("Hello World! ^.^");
-		logger.info("Hello there!" + 4);
 	}
 
 }

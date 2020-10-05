@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 public final class LoggerUtility {
 	
 	private static final PlainLogFormatter plainLogFormat = new PlainLogFormatter();
-	private static final DetailedLogFormatter detailedLogFormat = new DetailedLogFormatter();
+	private static final DetailedLogFormatter deatiledLogFormat = new DetailedLogFormatter();
 	
 	private LoggerUtility() {
 		throw new IllegalStateException("DNI LoggerUtility");
@@ -22,12 +22,7 @@ public final class LoggerUtility {
 	public static void configureConsoleLogger(Logger logger, boolean detailed) {
 		logger.setUseParentHandlers(false);
 		final ConsoleHandler ch = new ConsoleHandler();
-		
-		if (detailed)
-			ch.setFormatter(detailedLogFormat);
-		else
-			ch.setFormatter(plainLogFormat);
-		
+		ch.setFormatter(consoleLogFormat);
 		logger.addHandler(ch);
 	}
 

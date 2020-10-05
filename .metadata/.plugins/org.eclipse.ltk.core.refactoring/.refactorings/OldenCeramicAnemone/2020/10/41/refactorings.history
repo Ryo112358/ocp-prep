@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;oca.se8.logging.MyConsoleLogFormatter&apos; to &apos;DetailedLogFormatter&apos;&#x0D;&#x0A;- Original project: &apos;OldenCeramicAnemone&apos;&#x0D;&#x0A;- Original element: &apos;oca.se8.logging.MyConsoleLogFormatter&apos;&#x0D;&#x0A;- Renamed element: &apos;oca.se8.logging.DetailedLogFormatter&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MyConsoleLogFormatter&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;oca.se8.logging{MyConsoleLogFormatter.java[MyConsoleLogFormatter" matchStrategy="1" name="DetailedLogFormatter" qualified="false" references="true" similarDeclarations="false" stamp="1601862256288" textual="false" version="1.0"/>
+</session>

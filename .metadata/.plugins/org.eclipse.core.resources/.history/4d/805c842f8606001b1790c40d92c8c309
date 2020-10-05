@@ -1,0 +1,30 @@
+package oca.se8;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
+import oca.se8.logging.LoggerUtility;
+
+public class Driver {
+	
+	private static final Logger logger = Logger.getLogger(Driver.class.getName());
+
+	public static void main(String[] args) {
+		
+		LoggerUtility.configureConsoleLogger(logger);
+		logger.info("testing");
+		System.out.println("Hello World! ^.^");
+		logger.fine("testing 2");
+		
+	    String[] flora = {"Mango", "Papaya", "Watermelon"};
+	    List<String> floraList = new ArrayList<>();
+	    floraList.add(flora[0]);
+	    floraList.add(flora[2]);
+	    floraList.set(1, flora[1]);
+	    floraList.remove(0);
+	    System.out.println(floraList);
+	    System.out.println(flora);
+	}
+
+}

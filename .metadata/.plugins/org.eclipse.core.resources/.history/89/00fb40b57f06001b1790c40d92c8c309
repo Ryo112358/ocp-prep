@@ -1,0 +1,34 @@
+package oca.se8.logging;
+
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Logger;
+
+public final class LoggerUtility {
+	
+	private static final MyConsoleLogFormatter consoleLogFormat = new MyConsoleLogFormatter();
+	
+	private LoggerUtility() {
+		throw new IllegalStateException("DNI LoggerUtility");
+	}
+	
+	public static void configureConsoleLogger(Logger logger) {
+		logger.setUseParentHandlers(false);
+		final ConsoleHandler ch = new ConsoleHandler();
+		ch.setFormatter(consoleLogFormat);
+		logger.addHandler(ch);
+		
+        boolean keepGoing = true;
+        int counter = 0;
+        int happinessLevel = 5;
+        while(counter++ < 3) {
+            int pelletsFed = (1 + 2*counter) % 3;
+            switch(pelletsFed) {
+                default:
+                case 0: happinessLevel -= 1; break;
+                case 1: happinessLevel += 7;
+            }
+        }
+        System.out.println(happinessLevel);
+	}
+
+}

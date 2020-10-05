@@ -13,7 +13,14 @@ public class Driver {
 		LoggerUtility.configureConsoleLogger(logger);
 		logger.info("testing");
 		System.out.println("Hello World! ^.^");
-		logger.info("Hello there!" + 4);
+		logger.fine("testing 2");
+		
+		addToByte(10, 32);
+	}
+	
+	private static void addToByte(byte b1, byte b2) {
+		b1 = (byte) (b1 + b2);
+		System.out.println(b1);
 	}
 
 }
