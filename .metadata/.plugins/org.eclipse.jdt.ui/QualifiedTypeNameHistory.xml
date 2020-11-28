@@ -14,11 +14,12 @@
     <fullyQualifiedTypeName name="io.playground.logging.MyFormatter"/>
     <fullyQualifiedTypeName name="java.util.logging.ConsoleHandler"/>
     <fullyQualifiedTypeName name="java.util.logging.Level"/>
-    <fullyQualifiedTypeName name="java.util.logging.Formatter"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="java.time.ZoneId"/>
     <fullyQualifiedTypeName name="io.playground.logging.MyConsoleLogFormatter"/>
     <fullyQualifiedTypeName name="java.util.logging.Logger"/>
     <fullyQualifiedTypeName name="oca.se8.logging.LoggerUtility"/>
     <fullyQualifiedTypeName name="java.lang.IllegalStateException"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.logging.Formatter"/>
 </qualifiedTypeNameHistroy>

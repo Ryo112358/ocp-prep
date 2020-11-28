@@ -144,9 +144,35 @@
     ```
 1. What is the output of the following program?
     ```java
+    public class FeedingSchedule{
+        public static void main(String[] args) {
+            int foodPelletsEaten=5, counter=0;
+            OUTER: for(int i=0; i<3; )
+                Inner: do {
+                    i++; foodPelletsEaten++;
+                    if(foodPelletsEaten > 10) break INNER;
+                    foodPelletsEaten += 4;
+                    counter++;
+                } while(counter <= 2);
+            System.out.println(foodPelletsEaten);
+        }
+    }
     ```
 1. What is the output of the following program?
     ```java
+    public class Gilacorn {
+        private String color;
+        public Gilacorn() {
+            this("brown");
+        }
+        public Gilacorn(String color) {
+            color = color;
+        }
+        public static void main(String[] args) {
+            Gilacorn speedy = new Gilacorn();
+            System.out.println("Color: " + speedy.color);
+        }
+    }
     ```
 1. What is the output of the following program?
     ```java
